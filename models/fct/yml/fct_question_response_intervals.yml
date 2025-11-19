@@ -1,0 +1,32 @@
+models:
+  - name: fct_question_response_intervals
+    description:
+      This model calculates monthly question response times, grouping questions
+      into defined time bands (e.g. <1 min, 1-5 mins, 5 mins-1 hour, etc.).
+      It is used to analyze how quickly accepted answers are provided over time.
+
+    columns:
+      - name: month
+        description: "Year-month column representing when the question was created."
+        tests:
+          - not_null
+          - unique
+          - positive_values
+
+      - name: "<1 min"
+        description: "Count of questions answered in less than one minute."
+
+      - name: "1-5 mins"
+        description: "Count of questions answered between 1 and 5 minutes."
+
+      - name: "5 mins-1 hour"
+        description: "Count of questions answered between 6 and 60 minutes."
+
+      - name: "1-3 hours"
+        description: "Count of questions answered between 61 and 180 minutes."
+
+      - name: "3 hours-1 day"
+        description: "Count of questions answered between 181 and 1440 minutes."
+
+      - name: ">1 day"
+        description: "Count of questions answered after more than one day."

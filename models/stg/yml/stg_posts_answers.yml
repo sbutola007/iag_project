@@ -1,0 +1,22 @@
+models:
+  - name: stg_posts_answers
+    description: "Intermediate staging model that filters records for answer posts from stg_posts."
+    columns:
+      - name: answer_id
+        description: "Unique identifier for the answer post."
+        tests:
+          - not_null
+          - unique
+
+      - name: parent_id
+        description: "ID of the parent question that this answer belongs to."
+        tests:
+          - not_null
+
+      - name: answer_created_date
+        description: "Timestamp when the answer was created."
+        tests:
+          - not_null
+
+      - name: post_type_id
+        description: "Type of post. For answers this must always be 2."

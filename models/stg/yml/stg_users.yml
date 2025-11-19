@@ -1,0 +1,39 @@
+models:
+  - name: stg_users
+    description:
+      Staging model for users, built as a view on top of src_users.
+      It performs some cleansing of columns and prepares for downstream
+      fact table.
+
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user."
+        tests:
+          - not_null
+          - unique
+
+      - name: user_display_name
+        description: "Display name chosen by the user."
+        tests:
+          - not_null
+
+      - name: user_reputation
+        description: "Reputation score of the user."
+        tests:
+          - not_null
+
+      - name: user_creation_date
+        description: "Timestamp when the user was created."
+        tests:
+          - not_null
+
+      - name: user_last_access_date
+        description: "Timestamp of the user's most recent access."
+        tests:
+          - not_null
+
+      - name: user_views
+        description: "Number of times the user's profile viewed."
+        tests:
+          - not_null
+          - positive_values

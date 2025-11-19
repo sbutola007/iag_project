@@ -1,0 +1,35 @@
+models:
+  - name: src_comments
+    description: " Comments table loaded from Parquet files"
+    tests:
+      - min_records
+
+  - name: src_posts
+    description: "StackOverflow posts loaded from Parquet"
+    tests:
+      - min_records
+
+  - name: src_votes
+    description: "Votes on posts loaded from Parquet"
+    tests:
+      - min_records 
+
+  - name: src_users
+    description: "Registered users loaded from Parquet"
+    tests:
+      - min_records
+
+  - name: src_badges
+    description: "Badges earned by users loaded from Parquet"
+    tests:
+      - min_records
+
+  - name: src_post_links
+    description: "Links between posts loaded from Parquet"
+    tests:
+      - min_records
+
+  - name: src_tags
+    description: "Tags applied to posts loaded from Parquet"
+    tests:
+      - min_records   

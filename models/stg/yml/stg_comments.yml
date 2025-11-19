@@ -1,0 +1,25 @@
+models:
+  - name: stg_comments
+    description: "Raw comments table in readable formats, selecting and renaming fields from the source."
+    columns:
+      - name: comment_id
+        description: "Unique identifier for the comment."
+        tests:
+          - not_null
+          - unique
+
+      - name: post_id
+        description: "ID of the post that this comment belongs to."
+        tests:
+          - not_null
+
+      - name: comment_user_id
+        description: "User ID of the commenter (nullable if anonymous)."
+
+      - name: comment_text
+        description: "Text content of the comment."
+
+      - name: comment_creation_date
+        description: "Timestamp when the comment was created."
+        tests:
+          - not_null

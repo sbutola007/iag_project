@@ -1,0 +1,37 @@
+models:
+  - name: stg_posts
+    description: "Staging model for posts. Filters and renames columns from src_posts."
+    columns:
+      - name: post_id
+        description: "Unique identifier for the post."
+        tests:
+          - not_null
+          - unique
+
+      - name: post_type_id
+        description: "Type of post (1 = Question, 2 = Answer)."
+        tests:
+          - not_null
+
+      - name: accepted_answer_id
+        description: "ID of the accepted answer for a question (nullable)."
+
+      - name: parent_id
+        description: "ID of the parent question for an answer."
+
+      - name: post_creation_date
+        description: "Timestamp when the post was created."
+        tests:
+          - not_null
+
+      - name: score
+        description: "Score of the post based on votes."
+
+      - name: post_view_count
+        description: "Number of times the post has been viewed."
+
+      - name: post_owner_user_id
+        description: "User ID of the post owner (nullable)."
+
+      - name: question_post
+        description: "Title of the post if it is a question."

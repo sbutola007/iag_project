@@ -1,0 +1,33 @@
+models:
+  - name: stg_qna_joined
+    description: 
+      This intermediate model derive minutes difference for every posted question 
+      whose answer is marked accepted. It calculates the time difference in minutes
+      between when a question was posted and when its accepted answer was created.
+
+    columns:
+      - name: question_id
+        description: "Unique identifier for the question."
+        tests:
+          - not_null
+
+      - name: answer_id
+        description: "Unique identifier for the accepted answer."
+        tests:
+          - not_null
+
+      - name: question_created_date
+        description: "Timestamp when the question was created."
+        tests:
+          - not_null
+
+      - name: answer_created_date
+        description: "Timestamp when the accepted answer was created."
+        tests:
+          - not_null
+
+      - name: diff_in_minutes
+        description: "Difference in minutes between question creation and accepted answer creation."
+        tests:
+          - not_null
+          - positive_values

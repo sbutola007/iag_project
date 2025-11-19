@@ -1,0 +1,29 @@
+models:
+  - name: fct_top_rank_users
+    description: 
+      This model identifies the top-ranked users based on the most views 
+      on questions they post.
+
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user."
+        tests:
+          - unique
+          - not_null
+
+      - name: user_name
+        description: "Display name of the user."
+        tests:
+          - not_null
+
+      - name: rank
+        description: "Rank position of the user among all users."
+        tests:
+          - not_null
+          - positive_values
+
+      - name: total_question_views
+        description: "Total number of views across all questions asked by the user."
+        tests:
+          - not_null
+          - positive_values

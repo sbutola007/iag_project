@@ -1,0 +1,12 @@
+models:
+  - name: fct_post_with_at_replies
+    description: 
+      This model aggregates the number of posts that contain '@' replies 
+      either on the post or any of its answers.
+
+    columns:
+      - name: 'questions_with_at_replies'
+        description: "Total number of posts that include '@' replies."
+        tests:
+          - not_null
+          - positive_values

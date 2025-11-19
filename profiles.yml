@@ -1,0 +1,8 @@
+iag_project:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "/Users/technofun/db/iag_project.duckdb"
+      extensions: ['parquet', 'httpfs']
+      threads: 4

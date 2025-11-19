@@ -1,0 +1,25 @@
+models:
+  - name: stg_posts_questions
+    description: "Intermediate staging model that filters records for question posts from stg_posts."
+    columns:
+      - name: question_id
+        description: "Unique identifier for the question post."
+        tests:
+          - not_null
+          - unique
+
+      - name: post_owner_user_id
+        description: "User ID of the question owner (nullable)."
+
+      - name: question_post
+        description: "Title of the question post."
+        tests:
+          - not_null
+
+      - name: question_created_date
+        description: "Timestamp when the question was created."
+        tests:
+          - not_null
+
+      - name: accepted_answer_id
+        description: "ID of the accepted answer for the question"
