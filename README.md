@@ -1,15 +1,42 @@
-Welcome to your new dbt project!
+# iag_project
 
-### Using the starter project
+A dbt project for transforming and and build pipeline for StackOverflow dataset.  
+This project organizes raw sources into staging models for transformation and finally the fact tables for aggregated records.
 
-Try running the following commands:
-- dbt run
-- dbt test
+---
+---
+
+## 🚀 Getting Started
+
+### 1. Install dbt
+Make sure you have dbt installed. For example, with pip:
+pip install dbt-core
+
+### 2. Clone the repository
+git clone https://github.com/sbutola007/iag_project.git
+cd iag_project
+
+### 3. Set up your profiles.yml
+iag_project:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "/Users/technofun/db/iag_project.duckdb"
+      extensions: ['parquet', 'httpfs']
+      threads: 4
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### 4. Install dependencies
+dbt deps
+
+### 5. Run the project
+dbt run
+
+
+### 6. Test the models
+dbt test
+
+### 7. Generate docs
+dbt docs generate
+dbt docs serve
