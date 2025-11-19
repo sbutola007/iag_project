@@ -1,7 +1,0 @@
-sources:
-  - name: iag_project
-    schema: raw
-    tables: 
-      - name: comments
-        description: "Raw comments data from S3 parquet files"
-        identifier: raw_comments
