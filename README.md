@@ -8,9 +8,11 @@ This project organizes raw sources into staging models for transformation and fi
 
 ## 🚀 Getting Started
 
-### 1. Install dbt
+### 1. Install dbt & dbt-duckdb
 Make sure you have dbt installed. For example, with pip:
+```bash
 pip install dbt-core
+pip install dbt-duckdb
 
 ### 2. Clone the repository
 git clone https://github.com/sbutola007/iag_project.git
