@@ -28,7 +28,7 @@ cte_comment_post as (
     left join {{ ref('stg_posts_questions') }} cte_q
       on cte_c.post_id = cte_q.question_id
     left join {{ ref('stg_posts_answers') }} cte_a
-      on cte_c.post_id = cte_a.parent_id
+      on cte_q.question_id = cte_a.parent_id
 ),
 
 -- Step 2: Keeping only comments for user who asked the original question and his replies start with '@'
@@ -45,7 +45,6 @@ cte_owner_at_replies as (
       and ct.comment_user_id = q.post_owner_user_id
     where (ct.comment_text like '%@%' or q.question_post like '%@%' )
 )
-
 select count(*)
 as 'questions_with_at_replies'
 from cte_owner_at_replies   

@@ -1,6 +1,6 @@
 # iag_project
 
-A dbt project for transforming and and build pipeline for StackOverflow dataset.  
+A dbt project for transforming and build pipeline for StackOverflow dataset.  
 This project organizes raw sources into staging models for transformation and finally the fact tables for aggregated records.
 
 ---

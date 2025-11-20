@@ -3,11 +3,9 @@
  {{ config(materialized='view') }}
 
 select 
-parent_id, count(*)
-from {{ ref('stg_posts_answers') }} 
---where post_type_id = 1
-group by parent_id
-having count(*)>1
+*
+from {{ ref('stg_posts') }} 
+where post_type_id = 2 and question_post is not null
 /*
 
    select
